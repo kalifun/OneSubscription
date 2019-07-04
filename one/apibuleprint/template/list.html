@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic CRUD</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <a href="{{ url_for('api.addmail') }}" class="btn btn-primary">添加邮箱</a>
+        <a href="{{ url_for('api.logout') }}" class="btn btn-primary">退出登录</a>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th>ID</th>
+            <th>email地址</th>
+            <th>加入时间</th>
+            <th>是否锁定</th>
+            <th>操作</th>
+        </tr>
+
+        {% for list in result %}
+        <tr>
+            <td> {{list.id}} </td>
+            <td> {{list.emailadd}} </td>
+            <td>{{ list.addtime }}</td>
+            <td>{{ list.locked }}</td>
+            <td>
+                <a class="btn btn-primary btn-sm" href="{{ url_for('api.locked', listadd=list.emailadd) }}">锁定</a>
+                <a class="btn btn-primary btn-sm" href="{{ url_for('api.delete', listadd=list.emailadd) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

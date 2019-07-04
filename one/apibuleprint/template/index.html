@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One订阅</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('api.static',filename='style.css') }}">
+</head>
+<body>
+<div class="search d2">
+    {% for msg in get_flashed_messages(category_filter=["ok"]) %}
+{#<div class="king-notice2 king-notice-success notice-borders">#}
+{#    <i class="fa fa-check-circle"></i>#}
+{#    <div class="notice-text">#}
+{#        <p>{{ msg }}</p>#}
+{#    </div>#}
+{#</div>#}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+{#            <button type="button"  data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
+            <strong>{{ msg }}</strong>
+        </div>
+    {% endfor %}
+  <h1 >One 订阅</h1>
+  <form method="post" action="{{ url_for('api.index') }}">
+<!--    <h1>One 订阅</h1>-->
+    <input type="text" placeholder="输入订阅的邮箱..." name="email">
+    <button type="submit"></button>
+  </form>
+</div>
+</body>
+</html>

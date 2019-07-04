@@ -1,0 +1,20 @@
+body {
+    background-color: #A3D0C3;
+    margin-top: 15%;
+}
+.row {
+    width: auto;
+    height: 400px;
+    background-color: aliceblue;
+    border: 1px solid lavender;
+}
+.col-md-2 {
+    margin-top: 4%;
+    left: 40%;
+    position: absolute;
+    text-align: center;
+}
+.col-md-2 h1 {
+    margin-bottom: 1em;
+    color: #F15B42;
+}
