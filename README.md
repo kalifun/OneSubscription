@@ -159,17 +159,17 @@ python run.py
 
 ## 效果
 
-![](https://image.kalifun.top/upload/1907/6765f8b4e6f6ff46.png)
+![](img/index.png)
 
 **后台比较简陋我就不展现出来了。**
 
 **输入邮箱地址会收到一封订阅成功的邮件**
 
-![](https://image.kalifun.top/upload/1907/b6a2eab07f59fad8.png)
+![](img/success.png)
 
 **订阅成功，每天定时发送One一个最新的内容**
 
-![](https://image.kalifun.top/upload/1907/27c8deb042dd1706.png)
+![](img/onemail.png)
 
 ## 接口
 
