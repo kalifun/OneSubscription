@@ -17,13 +17,13 @@
 
 ### 安装虚拟环境
 
-```
+```bash
 pip3 install virtualenv
 ```
 
 ### 创建虚拟环境
 
-```
+```bash
 # 进入到你想创建的目录
 virtualenv venv
 ```
@@ -32,13 +32,13 @@ virtualenv venv
 
 ### 激活虚拟环境
 
-```
+```bash
 source venv/bin/activate
 ```
 
 ### 安装模块
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -46,7 +46,7 @@ pip install -r requirements.txt
 
 **one/config/config.py**
 
-```
+```python
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://用户名:密码.@localhost:端口/数据库'
 # 电子邮件服务器的主机名或IP地址
 MAIL_SERVER = 'smtp.163.com'
@@ -106,7 +106,7 @@ curl http://127.0.0.1:8000/one/index
 
 ### 配置nginx
 
-```
+```nginx
 server {
         listen 80;
         server_name 域名;
@@ -127,7 +127,7 @@ $ echo_supervisord_conf > supervisor.conf   # 生成 supervisor 默认配置文�
 $ vim supervisor.conf                       # 修改 supervisor 配置文件，添加 gunicorn 进程管理
 ```
 
-```
+```bash
 [program:oneflask]
 command=/home/wwwroot/oneflask -w 4 -b 0.0.0.0:8000 run:application    ;supervisor启动命令         
 directory=/home/www/blog                                                 ; 项目的文件夹路径
@@ -162,6 +162,14 @@ python run.py
 ![](https://image.kalifun.top/upload/1907/6765f8b4e6f6ff46.png)
 
 **后台比较简陋我就不展现出来了。**
+
+**输入邮箱地址会收到一封订阅成功的邮件**
+
+![](https://image.kalifun.top/upload/1907/b6a2eab07f59fad8.png)
+
+**订阅成功，每天定时发送One一个最新的内容**
+
+![](https://image.kalifun.top/upload/1907/27c8deb042dd1706.png)
 
 ## 接口
 
